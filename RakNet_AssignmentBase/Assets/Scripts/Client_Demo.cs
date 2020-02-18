@@ -294,8 +294,13 @@ public class Client_Demo : MonoBehaviour
                         if (Application.CanStreamedLevelBeLoaded(sceneName))
                         {
                             Scene nextScene = SceneManager.GetSceneByName(sceneName);
-                            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);   // might not need additive, makes next scene overlap current
+                            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
                             SceneManager.MoveGameObjectToScene(this.gameObject, nextScene);
+
+                            //foreach (PlayerManager player in playersList)
+                            //{
+                            //    SceneManager.MoveGameObjectToScene(player.gameObject, nextScene);
+                            //}
                         }
                         else
                         {
